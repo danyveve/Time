@@ -1,0 +1,238 @@
+.zilele_saptamanii_draggable_zone1 {
+    display: none;
+    position: absolute;
+}
+
+.zilele_saptamanii_droppable_zone1 {
+    display: none;
+    position: absolute;
+    border: 10px dashed saddlebrown;
+}
+
+
+.zilele_saptamanii_draggable_zone1 *, .zilele_saptamanii_droppable_zone1 * {
+    position: relative;
+    height: 100%;
+    width: 30%;
+}
+
+.zi_saptamana_sort_item1.draggable-mirror {
+    height: 20%;
+    width: 9%;
+    opacity: 0.7;
+}
+
+.miercuri_draggable_1.draggable-mirror, .miercuri_draggable_2.draggable-mirror {
+    height: 18% !important;
+    width: 9%;
+    opacity: 0.7;
+}
+
+
+
+
+
+.zilele_saptamanii_draggable_zone2 {
+    display: none;
+    position: absolute;
+}
+
+.zilele_saptamanii_droppable_zone2 {
+    display: none;
+    position: absolute;
+    border: 10px dashed saddlebrown;
+}
+
+
+.zilele_saptamanii_draggable_zone2 *, .zilele_saptamanii_droppable_zone2 * {
+    position: relative;
+    height: 100%;
+    width: 30%;
+}
+
+.zi_saptamana_sort_item2.draggable-mirror {
+    height: 20%;
+    width: 9%;
+    opacity: 0.7;
+}
+
+
+
+
+
+
+
+.zilele_saptamanii_draggable_zone3 {
+    display: none;
+    position: absolute;
+}
+
+.zilele_saptamanii_droppable_zone3 {
+    display: none;
+    position: absolute;
+    border: 10px dashed saddlebrown;
+}
+
+
+.zilele_saptamanii_draggable_zone3 *, .zilele_saptamanii_droppable_zone3 * {
+    position: relative;
+    height: 100%;
+    width: 30%;
+}
+
+.zi_saptamana_sort_item3.draggable-mirror {
+    height: 20%;
+    width: 9%;
+    opacity: 0.7;
+}
+
+
+
+
+
+
+
+.silabe_draggable_zone1 {
+    display: none;
+    position: absolute;
+}
+
+.silabe_droppable_zone1 {
+    display: none;
+    position: absolute;
+    border: 10px dashed saddlebrown;
+}
+
+
+.silabe_draggable_zone1 *, .silabe_droppable_zone1 * {
+    position: relative;
+    height: 100%;
+    width: 23%;
+}
+
+.silaba_sort_item1.draggable-mirror {
+    height: 15%;
+    width: 9.2%;
+    opacity: 0.7;
+}
+
+
+
+
+
+
+.silabe_draggable_zone2 {
+    display: none;
+    position: absolute;
+}
+
+.silabe_droppable_zone2 {
+    display: none;
+    position: absolute;
+    border: 10px dashed saddlebrown;
+}
+
+
+.silabe_draggable_zone2 *, .silabe_droppable_zone2 * {
+    position: relative;
+    height: 100%;
+    width: 23%;
+}
+
+.silaba_sort_item2.draggable-mirror {
+    height: 15%;
+    width: 9.2%;
+    opacity: 0.7;
+}
+
+
+
+
+
+
+
+.silabe_draggable_zone3 {
+    display: none;
+    position: absolute;
+}
+
+.silabe_droppable_zone3 {
+    display: none;
+    position: absolute;
+    border: 10px dashed saddlebrown;
+}
+
+
+.silabe_draggable_zone3 *, .silabe_droppable_zone3 * {
+    position: relative;
+    height: 100%;
+    width: 23%;
+}
+
+.silaba_sort_item3.draggable-mirror {
+    height: 15%;
+    width: 9.2%;
+    opacity: 0.7;
+}
+
+
+
+
+
+
+
+.silabe_draggable_zone4 {
+    display: none;
+    position: absolute;
+}
+
+.silabe_droppable_zone4 {
+    display: none;
+    position: absolute;
+    border: 10px dashed saddlebrown;
+}
+
+
+.silabe_draggable_zone4 *, .silabe_droppable_zone4 * {
+    position: relative;
+    height: 100%;
+    width: 23%;
+}
+
+.silaba_sort_item4.draggable-mirror {
+    height: 15%;
+    width: 9.2%;
+    opacity: 0.7;
+}
+
+
+
+
+
+
+
+
+
+.silabe_draggable_zone5 {
+    display: none;
+    position: absolute;
+}
+
+.silabe_droppable_zone5 {
+    display: none;
+    position: absolute;
+    border: 10px dashed saddlebrown;
+}
+
+
+.silabe_draggable_zone5 *, .silabe_droppable_zone5 * {
+    position: relative;
+    height: 100%;
+    width: 23%;
+}
+
+.silaba_sort_item5.draggable-mirror {
+    height: 15%;
+    width: 9.2%;
+    opacity: 0.7;
+}

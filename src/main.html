@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Timpul</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="css_files/util.css">
+    <link rel="stylesheet" type="text/css" href="css_files/start_page.css">
+    <link rel="stylesheet" type="text/css" href="css_files/main_page.css">
+    <link rel="stylesheet" type="text/css" href="css_files/page_part_1.css">
+    <link rel="stylesheet" type="text/css" href="css_files/page_part2.css">
+    <link rel="stylesheet" type="text/css" href="css_files/page_part_3.css">
+    <link rel="stylesheet" type="text/css" href="css_files/page_part_4.css">
+
+    <script src="js_files/jquery-3.3.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+
+    <!-- Entire bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.6/lib/draggable.bundle.js"></script>
+
+    <script src="js_files/util.js"></script>
+    <script src="js_files/start_page.js"></script>
+    <script src="js_files/page_part_1.js"></script>
+    <script src="js_files/page_part_2.js"></script>
+    <script src="js_files/page_part_3.js"></script>
+    <script src="js_files/page_part_4.js"></script>
+</head>
+
+<body>
+    <div class="speech_div d-none">
+        <span class="talking_dots" style="top: 32%; left: 32%;"></span>
+        <img class="speech_bubble" src="../resources/general/poze/speech_bubble.png" style="top: 35%; left: 26%;">
+    </div>
+    <div class="general_audios_vid">
+        <audio id="continua" src="../resources/audios/continua.mp3" onended="closeBubble()"></audio>
+        <audio id="bravo" src="../resources/audios/bravo.mp3" onended="closeBubble()"></audio>
+        <audio id="ups" src="../resources/audios/ups.mp3" onended="closeBubble()"></audio>
+        <audio id="felicitari_lectie_completa" src="../resources/audios/felicitari_lectie_completa.mp3" onended="closeBubble()"></audio>
+        <audio id="inapoi_audio" src="../resources/audios/inapoi.mp3" onended="closeBubble()"></audio>
+    </div>
+
+
+    <div class="page start_page">
+        <img id="play_button" class="pulse" src="../resources/general/poze/play_button.png">
+
+        <div class="audios_div">
+            <audio id="incepe_jocul_hint_audio" src="../resources/audios/incepe_jocul_hint.mp3"
+                onended="closeBubble()"></audio>
+        </div>
+    </div>
+
+
+    <div class="page main_page d-none">
+        <img id="lesson1" class="lesson_scroll" src="../resources/general/poze/scroll_joc_instrumente.png"
+            style="top: 10%; left: 45%;">
+        <img id="lesson2" class="lesson_scroll" src="../resources/general/poze/scroll_joc_operatii.png"
+            style="top: 10%; left: 70%;">
+        <br>
+        <img id="lesson3" class="lesson_scroll" src="../resources/general/poze/scroll_joc_lunile_anului.png"
+            style="top: 45%; left:45%;">
+        <img id="lesson4" class="lesson_scroll" src="../resources/general/poze/scroll_joc_anotimpuri.png"
+            style="top: 45%; left: 70%;">
+
+        <div class="audios_div">
+            <audio id="intro_audio" src="../resources/audios/intro.mp3" onended="closeBubble()"></audio>
+        </div>
+    </div>
+
+
+
+    <div class="page page_part_1 d-none">
+        <img class="audio_button" src="../resources/general/poze/repeta.png">
+
+        <div class="big_scroll_container"></div>
+
+        <div class="audios_div">
+            <audio id="lectie1_part1" src="../resources/audios/part1/lectie1_part1.mp3"
+                onended="playAudio('lectie1_part2')" onplay="showImagesLesson1_1()"></audio>
+            <audio id="lectie1_part2" src="../resources/audios/part1/lectie1_part2.mp3"
+                onended="playAudio('lectie1_part3')" onplay="showImagesLesson1_2()"></audio>
+            <audio id="lectie1_part3" src="../resources/audios/part1/lectie1_part3.mp3"
+                onended="playAudio('lectie1_outro')" onplay="showImagesLesson1_3()"></audio>
+            <audio id="lectie1_outro" src="../resources/audios/part1/lectie1_outro.mp3" onended="closeBubble()"
+                onplay="showImagesLesson1_outro()"></audio>
+
+            <audio id="ceasul_audio" src="../resources/audios/part1/joc1_ceasul.mp3" onended="closeBubble()"></audio>
+            <audio id="clepsidra_sau_cronometrul_audio" src="../resources/audios/part1/joc1_clepsidra_sau_cronometrul.mp3" onended="closeBubble()"></audio>
+            <audio id="calendarul_audio" src="../resources/audios/part1/joc1_calendarul.mp3" onended="closeBubble()"></audio>
+
+            <audio id="joc1_hint" src="../resources/audios/part1/joc1_hint.mp3" onended="closeBubble()"></audio>
+            <audio id="joc1_intrebare1" src="../resources/audios/part1/joc1_intrebare1.mp3" onended="closeBubble(); setupJoc1Intrebare1()" onplay="showAnswers()"></audio>
+            <audio id="joc1_intrebare2" src="../resources/audios/part1/joc1_intrebare2.mp3" onended="closeBubble(); setupJoc1Intrebare2()"></audio>
+            <audio id="joc1_intrebare3" src="../resources/audios/part1/joc1_intrebare3.mp3" onended="closeBubble(); setupJoc1Intrebare3()"></audio>
+            <audio id="joc1_intrebare4" src="../resources/audios/part1/joc1_intrebare4.mp3" onended="closeBubble(); setupJoc1Intrebare4()"></audio>
+            <audio id="joc1_intrebare5" src="../resources/audios/part1/joc1_intrebare5.mp3" onended="closeBubble(); setupJoc1Intrebare5()"></audio>
+            <audio id="joc1_intrebare6" src="../resources/audios/part1/joc1_intrebare6.mp3" onended="closeBubble(); setupJoc1Intrebare6()"></audio>
+            <audio id="joc1_intrebare7" src="../resources/audios/part1/joc1_intrebare7.mp3" onended="closeBubble(); setupJoc1Intrebare7()"></audio>
+            <audio id="joc1_intrebare8" src="../resources/audios/part1/joc1_intrebare8.mp3" onended="closeBubble(); setupJoc1Intrebare8()"></audio>
+            <audio id="joc1_intrebare9" src="../resources/audios/part1/joc1_intrebare9.mp3" onended="closeBubble(); setupJoc1Intrebare9()"></audio>
+
+            <audio id="joc1_hint2" src="../resources/audios/part1/joc1_hint2.mp3" onended="closeBubble(); setupJoc1DragAndDrop()" onplay="showDragAndDropJoc1()"></audio>
+
+            <audio id="dimineata_audio" src="../resources/audios/part1/joc1_dimineata.mp3" onended="closeBubble()"></audio>
+            <audio id="pranz_audio" src="../resources/audios/part1/joc1_pranz.mp3" onended="closeBubble()"></audio>
+            <audio id="dupamasa_audio" src="../resources/audios/part1/joc1_dupamasa.mp3" onended="closeBubble()"></audio>
+            <audio id="seara_audio" src="../resources/audios/part1/joc1_seara.mp3" onended="closeBubble()"></audio>
+            <audio id="noaptea_audio" src="../resources/audios/part1/joc1_noapte.mp3" onended="closeBubble()"></audio>
+
+            <audio id="submenu_item_lectie_part_1_audio" src="../resources/audios/part1/submenu_lectie_part_1.mp3" onended="closeBubble()"></audio>
+            <audio id="submenu_item_joc_part_1_audio" src="../resources/audios/part1/submenu_joc_part_1.mp3" onended="closeBubble()"></audio>
+        </div>
+        <div class="lesson_items_div">
+            <img id="mum_hug" src="../resources/momentele_zilei/poze/mum_hug.png"
+                style="top: 10%; left: 45%; height: 60%; width: 20%;">
+            <img id="hot_tea" src="../resources/momentele_zilei/poze/hot_tea.png"
+                style="top: 20%; left: 70%; height: 40%; width: 18%;">
+            <img id="dimineata" src="../resources/momentele_zilei/poze/dimineata.png"
+                style="top: 15%; left: 41%; height: 30%; width: 15%;">
+            <img id="pranzul" src="../resources/momentele_zilei/poze/pranz.png"
+                style="top: 15%; left: 60%; height: 30%; width: 15%;">
+            <img id="dupamasa" src="../resources/momentele_zilei/poze/dupa_masa.png"
+                style="top: 15%; left: 80%; height: 30%; width: 15%;">
+            <img id="seara" src="../resources/momentele_zilei/poze/seara.png"
+                style="top: 40%; left: 52%; height: 30%; width: 15%;">
+            <img id="noaptea" src="../resources/momentele_zilei/poze/noapte.png"
+                style="top: 39%; left: 69%; height: 30%; width: 15%;">
+            <img id="cantar" src="../resources/momentele_zilei/poze/cantar.png"
+                style="top: 20%; left: 45%; height: 40%; width: 20%;">
+            <img id="metru" src="../resources/momentele_zilei/poze/metru.png"
+                style="top: 20%; left: 69%; height: 40%; width: 20%;">
+            <img id="ceas" src="../resources/instrumente_si_operatii/poze/ceas_simplu.png"
+                style="top: 10%; left: 50%; height: 30%; width: 15%;">
+            <img id="clepsidra" src="../resources/instrumente_si_operatii/poze/clepsidra_simpla.png"
+                style="top: 10%; left: 69%; height: 30%; width: 15%;">
+            <img id="cronometru" src="../resources/instrumente_si_operatii/poze/cronometru_simplu.png"
+                style="top: 39%; left: 50%; height: 30%; width: 15%;">
+            <img id="calendar" src="../resources/instrumente_si_operatii/poze/calendar_simplu.png"
+                style="top: 39%; left: 69%; height: 30%; width: 15%;">
+
+            <img class="left_arrow" src="../resources/general/poze/left_arrow.png">
+        </div>
+
+        <div class="joc1_answers">
+            <img id="question_mark_joc1" src="../resources/instrumente_si_operatii/poze/question_mark.png" style="position: absolute; height: 20%; width: 10%; top: 15%; left: 62%;">
+            <img id="raspuns_ceas" src="../resources/instrumente_si_operatii/poze/ceas_simplu.png" style="position: absolute; height: 30%; width: 15%; top: 30%; left: 45%">
+            <span id="clepsidra_cronometru" style="position: absolute; height: 20%; width: 20%; top: 36%; left: 62%">
+                <img id="raspuns_clepsidra" src="../resources/instrumente_si_operatii/poze/clepsidra_simpla.png" style="position: relative; height: 100%; width: 47%">
+                <img id="raspuns_cronometru" src="../resources/instrumente_si_operatii/poze/cronometru_simplu.png" style="position: relative; height: 100%; width: 47%; left: -35%">
+            </span>
+            <img id="raspuns_calendar" src="../resources/instrumente_si_operatii/poze/calendar_simplu.png" style="position: absolute; height: 20%; width: 10%; top: 36%; left: 77%">
+        </div>
+
+        <div class="submenu submenu_part_1 d-none">
+            <img id="submenu_item_lectie_part_1" src="../resources/general/poze/learning_icon.png" style="height: 30%; width: 15%; left: 50%; top: 25%">
+            <img id="submenu_item_joc_part_1" src="../resources/general/poze/playing_icon.png" style="height: 30%; width: 17%; left: 70%; top: 23%">
+            <img id="submenu_go_back_part_1" src="../resources/general/poze/move_back.png" style="height: 15%; width: 10%; left: 5%; top: 80%">
+        </div>
+
+        <div class="moment_zi_sortable moment_zi_draggable_zone" style="top: 45%; left: 47.5%; height:20%; width: 40%">
+            <img id="pranzul_draggable" class="moment_zi_sort_item order_2" src="../resources/momentele_zilei/poze/pranz.png">
+            <img id="seara_draggable" class="moment_zi_sort_item order_4" src="../resources/momentele_zilei/poze/seara.png">
+            <img id="dupamasa_draggable" class="moment_zi_sort_item order_3" src="../resources/momentele_zilei/poze/dupa_masa.png">
+            <img id="dimineata_draggable" class="moment_zi_sort_item order_1" src="../resources/momentele_zilei/poze/dimineata.png">
+            <img id="noaptea_draggable" class="moment_zi_sort_item order_5" src="../resources/momentele_zilei/poze/noapte.png">
+        </div>
+        <div class="moment_zi_sortable moment_zi_droppable_zone" style="top: 20%; left: 47.5%; height:20%; width: 40%">
+
+        </div>
+    </div>
+
+    <div class="page page_part_2 d-none">
+        <img class="audio_button" src="../resources/general/poze/repeta.png">
+
+        <div class="big_scroll_container"></div>
+
+        <div class="audios_div">
+            <audio id="lectie2_part1" src="../resources/audios/part2/lectie2_part1.mp3"
+                onended="playAudio('lectie2_part2')" onplay="showImagesLesson2_1()"></audio>
+            <audio id="lectie2_part2" src="../resources/audios/part2/lectie2_part2.mp3"
+                onended="playAudio('lectie2_outro')" onplay="showImagesLesson2_2()"></audio>
+            <audio id="lectie2_outro" src="../resources/audios/part2/lectie2_outro.mp3" onended="closeBubble()"
+                onplay="showImagesLesson2_outro()"></audio>
+
+            <audio id="1_ceasuri_audio" src="../resources/audios/part2/1_ceasuri.mp3" onended="closeBubble()"></audio>
+            <audio id="2_ceasuri_audio" src="../resources/audios/part2/2_ceasuri.mp3" onended="closeBubble()"></audio>
+            <audio id="3_ceasuri_audio" src="../resources/audios/part2/3_ceasuri.mp3" onended="closeBubble()"></audio>
+            <audio id="4_ceasuri_audio" src="../resources/audios/part2/4_ceasuri.mp3" onended="closeBubble()"></audio>
+            <audio id="5_ceasuri_audio" src="../resources/audios/part2/5_ceasuri.mp3" onended="closeBubble()"></audio>
+
+            <audio id="1_clepsidre_audio" src="../resources/audios/part2/1_clepsidre.mp3" onended="closeBubble()"></audio>
+            <audio id="2_clepsidre_audio" src="../resources/audios/part2/2_clepsidre.mp3" onended="closeBubble()"></audio>
+            <audio id="3_clepsidre_audio" src="../resources/audios/part2/3_clepsidre.mp3" onended="closeBubble()"></audio>
+            <audio id="4_clepsidre_audio" src="../resources/audios/part2/4_clepsidre.mp3" onended="closeBubble()"></audio>
+            <audio id="5_clepsidre_audio" src="../resources/audios/part2/5_clepsidre.mp3" onended="closeBubble()"></audio>
+
+            <audio id="1_cronometre_audio" src="../resources/audios/part2/1_cronometre.mp3" onended="closeBubble()"></audio>
+            <audio id="2_cronometre_audio" src="../resources/audios/part2/2_cronometre.mp3" onended="closeBubble()"></audio>
+            <audio id="3_cronometre_audio" src="../resources/audios/part2/3_cronometre.mp3" onended="closeBubble()"></audio>
+            <audio id="4_cronometre_audio" src="../resources/audios/part2/4_cronometre.mp3" onended="closeBubble()"></audio>
+            <audio id="5_cronometre_audio" src="../resources/audios/part2/5_cronometre.mp3" onended="closeBubble()"></audio>
+
+            <audio id="1_calendare_audio" src="../resources/audios/part2/1_calendare.mp3" onended="closeBubble()"></audio>
+            <audio id="2_calendare_audio" src="../resources/audios/part2/2_calendare.mp3" onended="closeBubble()"></audio>
+            <audio id="3_calendare_audio" src="../resources/audios/part2/3_calendare.mp3" onended="closeBubble()"></audio>
+            <audio id="4_calendare_audio" src="../resources/audios/part2/4_calendare.mp3" onended="closeBubble()"></audio>
+            <audio id="5_calendare_audio" src="../resources/audios/part2/5_calendare.mp3" onended="closeBubble()"></audio>
+
+
+            <audio id="joc2_hint" src="../resources/audios/part2/joc2_hint.mp3" onended="closeBubble()"></audio>
+            <audio id="joc2_intrebare1" src="../resources/audios/part2/joc2_intrebare1.mp3" onended="closeBubble(); setupJoc2Intrebare1()" onplay="showAnswersJoc2Intrebare1()"></audio>
+            <audio id="joc2_intrebare2" src="../resources/audios/part2/joc2_intrebare2.mp3" onended="closeBubble(); setupJoc2Intrebare2()" onplay="showAnswersJoc2Intrebare2()"></audio>
+            <audio id="joc2_intrebare3" src="../resources/audios/part2/joc2_intrebare3.mp3" onended="closeBubble(); setupJoc2Intrebare3()" onplay="showAnswersJoc2Intrebare3()"></audio>
+            <audio id="joc2_intrebare4" src="../resources/audios/part2/joc2_intrebare4.mp3" onended="closeBubble(); setupJoc2Intrebare4()" onplay="showAnswersJoc2Intrebare4()"></audio>
+            <audio id="joc2_intrebare5" src="../resources/audios/part2/joc2_intrebare5.mp3" onended="closeBubble(); setupJoc2Intrebare5()" onplay="showAnswersJoc2Intrebare5()"></audio>
+            <audio id="joc2_intrebare6" src="../resources/audios/part2/joc2_intrebare6.mp3" onended="closeBubble(); setupJoc2Intrebare6()" onplay="showAnswersJoc2Intrebare6()"></audio>
+            <audio id="joc2_intrebare7" src="../resources/audios/part2/joc2_intrebare7.mp3" onended="closeBubble(); setupJoc2Intrebare7()" onplay="showAnswersJoc2Intrebare7()"></audio>
+            <audio id="joc2_intrebare8" src="../resources/audios/part2/joc2_intrebare8.mp3" onended="closeBubble(); setupJoc2Intrebare8()" onplay="showAnswersJoc2Intrebare8()"></audio>
+
+            <audio id="submenu_item_lectie_part_2_audio" src="../resources/audios/part2/submenu_lectie_part_2.mp3" onended="closeBubble()"></audio>
+            <audio id="submenu_item_joc_part_2_audio" src="../resources/audios/part2/submenu_joc_part_2.mp3" onended="closeBubble()"></audio>
+        </div>
+
+        <div class="lesson_items_div">
+            <img id="ceas_part2" src="../resources/instrumente_si_operatii/poze/ceas_simplu.png"
+                style="top: 8%; left: 50%; height: 32%; width: 16%;">
+            <img id="clepsidra_part2" src="../resources/instrumente_si_operatii/poze/clepsidra_simpla.png"
+                style="top: 12%; left: 69%; height: 28%; width: 14%;">
+            <img id="cronometru_part2" src="../resources/instrumente_si_operatii/poze/cronometru_simplu.png"
+                style="top: 39%; left: 50%; height: 30%; width: 15%;">
+            <img id="calendar_part2" src="../resources/instrumente_si_operatii/poze/calendar_simplu.png"
+                style="top: 39%; left: 69%; height: 30%; width: 15%;">
+
+            <img id="nr_1" src="../resources/instrumente_si_operatii/poze/1.png" style="top: 20%; left: 43%; height: 19%; width: 9%;">
+            <img id="nr_2" src="../resources/instrumente_si_operatii/poze/2.png" style="top: 20%; left: 53%; height: 19%; width: 9%;">
+            <img id="nr_3" src="../resources/instrumente_si_operatii/poze/3.png" style="top: 20%; left: 63%; height: 19%; width: 9%;">
+            <img id="nr_4" src="../resources/instrumente_si_operatii/poze/4.png" style="top: 20%; left: 73%; height: 19%; width: 9%;">
+            <img id="nr_5" src="../resources/instrumente_si_operatii/poze/5.png" style="top: 20%; left: 83%; height: 19%; width: 9%;">
+            <img id="nr_6" src="../resources/instrumente_si_operatii/poze/6.png" style="top: 40%; left: 43%; height: 19%; width: 9%;">
+            <img id="nr_7" src="../resources/instrumente_si_operatii/poze/7.png" style="top: 40%; left: 53%; height: 19%; width: 9%;">
+            <img id="nr_8" src="../resources/instrumente_si_operatii/poze/8.png" style="top: 40%; left: 63%; height: 19%; width: 9%;">
+            <img id="nr_9" src="../resources/instrumente_si_operatii/poze/9.png" style="top: 40%; left: 73%; height: 19%; width: 9%;">
+            <img id="nr_10" src="../resources/instrumente_si_operatii/poze/10.png" style="top: 40%; left: 83%; height: 17%; width: 7.5%;">
+
+            <img src="../resources/instrumente_si_operatii/poze/ceas_simplu.png" id="1_ceasuri_2_1"
+                style="top: 8%; left: 52%; height: 30%; width: 15%;">
+            <img src="../resources/instrumente_si_operatii/poze/ceas_simplu.png" id="1_ceasuri_2_2"
+                style="top: 8%; left: 67%; height: 30%; width: 15%;">
+            <img src="../resources/instrumente_si_operatii/poze/ceas_simplu.png" id="1_ceasuri_1" class="add_green"
+                style="top: 25%; left: 59.5%; height: 30%; width: 15%;">
+            <img src="../resources/instrumente_si_operatii/poze/2.png" id="2_ceasuri_de_adunat"
+                 style="top: 48%; left: 47%; height: 25%; width: 12.5%;">
+            <img src="../resources/instrumente_si_operatii/poze/plus.png" id="plus_ceasuri_de_adunat"
+                 style="top: 52%; left: 58%; height: 15%; width: 7.5%;">
+            <img src="../resources/instrumente_si_operatii/poze/1.png" id="1_ceasuri_de_adunat"
+                 style="top: 48%; left: 64%; height: 25%; width: 12.5%;">
+            <img src="../resources/instrumente_si_operatii/poze/equal.png" id="equal_ceasuri_de_adaugat"
+                 style="top: 53%; left: 74%; height: 15%; width: 7.5%;">
+            <img src="../resources/instrumente_si_operatii/poze/question_mark.png" id="question_mark_ceasuri_de_adaugat"
+                 style="top: 50%; left: 81%; height: 20%; width: 10%;">
+
+
+            <img src="../resources/instrumente_si_operatii/poze/clepsidra_simpla.png" id="1_clepsidra_5_1"
+                style="top: 13%; left: 43%; height: 20%; width: 10%">
+            <img src="../resources/instrumente_si_operatii/poze/clepsidra_simpla.png" id="1_clepsidra_5_2"
+                style="top: 13%; left: 53%; height: 20%; width: 10%">
+            <img src="../resources/instrumente_si_operatii/poze/clepsidra_simpla.png" id="1_clepsidra_5_3"
+                style="top: 13%; left: 63%; height: 20%; width: 10%">
+            <img src="../resources/instrumente_si_operatii/poze/clepsidra_simpla.png" id="1_clepsidra_5_4"
+                style="top: 13%; left: 73%; height: 20%; width: 10%">
+            <img src="../resources/instrumente_si_operatii/poze/clepsidra_simpla.png" id="1_clepsidra_5_5"
+                style="top: 13%; left: 83%; height: 20%; width: 10%">
+            <img src="../resources/instrumente_si_operatii/poze/clepsidra_simpla.png" id="1_clepsidra_2_1"
+                style="top: 33%; left: 58%; height: 20%; width: 10%" class="add_green">
+            <img src="../resources/instrumente_si_operatii/poze/clepsidra_simpla.png" id="1_clepsidra_2_2"
+                style="top: 33%; left: 68%; height: 20%; width: 10%" class="add_green">
+            <img src="../resources/instrumente_si_operatii/poze/5.png" id="5_clepsidre_de_adunat"
+                 style="top: 48%; left: 47%; height: 25%; width: 12.5%;">
+            <img src="../resources/instrumente_si_operatii/poze/plus.png" id="plus_clepsidre_de_adunat"
+                 style="top: 52%; left: 58%; height: 15%; width: 7.5%;">
+            <img src="../resources/instrumente_si_operatii/poze/2.png" id="2_clepsidre_de_adunat"
+                 style="top: 48%; left: 64%; height: 25%; width: 12.5%;">
+            <img src="../resources/instrumente_si_operatii/poze/equal.png" id="equal_clepsidre_de_adaugat"
+                 style="top: 53%; left: 74%; height: 15%; width: 7.5%;">
+            <img src="../resources/instrumente_si_operatii/poze/question_mark.png" id="question_mark_clepsidre_de_adaugat"
+                 style="top: 50%; left: 81%; height: 20%; width: 10%;">
+
+            <img src="../resources/instrumente_si_operatii/poze/calendar_simplu.png" id="1_calendar_5_1"
+                style="top: 13%; left: 45%; height: 20%; width: 10%;">
+            <img src="../resources/instrumente_si_operatii/poze/calendar_simplu.png" id="1_calendar_5_2"
+                style="top: 13%; left: 57%; height: 20%; width: 10%;">
+            <img src="../resources/instrumente_si_operatii/poze/calendar_simplu.png" id="1_calendar_5_3"
+                style="top: 13%; left: 69%; height: 20%; width: 10%;">
+            <img src="../resources/instrumente_si_operatii/poze/calendar_simplu.png" id="1_calendar_5_4"
+                style="top: 13%; left: 81%; height: 20%; width: 10%;">
+            <img src="../resources/instrumente_si_operatii/poze/calendar_simplu.png" id="1_calendar_5_5"
+                style="top: 33%; left: 63%; height: 20%; width: 10%;">
+            <img src="../resources/general/poze/red_cross.png" id="red_cross_calendar"
+                 style="top: 33%; left: 63%; height: 20%; width: 10%;">
+            <img src="../resources/instrumente_si_operatii/poze/5.png" id="5_calendare_de_scazut"
+                 style="top: 48%; left: 47%; height: 25%; width: 12.5%;">
+            <img src="../resources/instrumente_si_operatii/poze/minus.png" id="minus_calendare_de_scazut"
+                 style="top: 52%; left: 58.5%; height: 15%; width: 7.5%;">
+            <img src="../resources/instrumente_si_operatii/poze/1.png" id="1_calendare_de_scazut"
+                 style="top: 48%; left: 64%; height: 25%; width: 12.5%;">
+            <img src="../resources/instrumente_si_operatii/poze/equal.png" id="equal_calendare_de_scazut"
+                 style="top: 53%; left: 74%; height: 15%; width: 7.5%;">
+            <img src="../resources/instrumente_si_operatii/poze/question_mark.png" id="question_mark_calendare_de_scazut"
+                 style="top: 50%; left: 81%; height: 20%; width: 10%;">
+
+            <img src="../resources/instrumente_si_operatii/poze/cronometru_simplu.png" id="1_cronometru_3_1"
+                style="top: 13%; left: 50%; height: 25%; width: 12.5%">
+            <img src="../resources/instrumente_si_operatii/poze/cronometru_simplu.png" id="1_cronometru_3_2"
+                style="top: 13%; left: 70%; height: 25%; width: 12.5%">
+            <img src="../resources/instrumente_si_operatii/poze/cronometru_simplu.png" id="1_cronometru_3_3"
+                style="top: 25%; left: 60%; height: 25%; width: 12.5%">
+            <img src="../resources/general/poze/red_cross.png" id="red_cross_cronometru"
+            style="top: 29%; left: 61.5%; height: 20%; width: 10%;">
+            <img src="../resources/instrumente_si_operatii/poze/3.png" id="3_cronometre_de_scazut"
+            style="top: 48%; left: 47%; height: 25%; width: 12.5%;">
+            <img src="../resources/instrumente_si_operatii/poze/minus.png" id="minus_cronometre_de_scazut"
+            style="top: 52%; left: 58.5%; height: 15%; width: 7.5%;">
+            <img src="../resources/instrumente_si_operatii/poze/1.png" id="1_cronometre_de_scazut"
+            style="top: 48%; left: 64%; height: 25%; width: 12.5%;">
+            <img src="../resources/instrumente_si_operatii/poze/equal.png" id="equal_cronometre_de_scazut"
+            style="top: 53%; left: 74%; height: 15%; width: 7.5%;">
+            <img src="../resources/instrumente_si_operatii/poze/question_mark.png" id="question_mark_cronometre_de_scazut"
+            style="top: 50%; left: 81%; height: 20%; width: 10%;">
+
+            <img class="left_arrow" src="../resources/general/poze/left_arrow.png">
+        </div>
+
+        <div class="joc2_answers">
+            <div class="split_bar" style="position: absolute; z-index: 200; height: 2%; width: 40%; top: 41%; left: 47%; background-color: saddlebrown; border-radius: 25px"></div>
+
+            <img src="../resources/instrumente_si_operatii/poze/clepsidra_2.png" id="joc2_intrebare1_clepsidra2_1"
+                 style="top: 20%; left: 42%; height: 20%; width: 10%;">
+            <img src="../resources/instrumente_si_operatii/poze/plus.png" id="joc2_intrebare1_plus"
+                 style="top: 23%; left: 54%; height: 10%; width: 5%;">
+            <img src="../resources/instrumente_si_operatii/poze/clepsidra_2.png" id="joc2_intrebare1_clepsidra2_2"
+                 style="top: 20%; left: 61%; height: 20%; width: 10%;">
+            <img src="../resources/instrumente_si_operatii/poze/equal.png" id="joc2_intrebare1_equal"
+                 style="top: 23%; left: 74%; height: 10%; width: 5%;">
+            <img src="../resources/instrumente_si_operatii/poze/question_mark.png" id="joc2_intrebare1_questionmark"
+                 style="top: 18%; left: 81%; height: 20%; width: 10%;">
+
+            <img src="../resources/instrumente_si_operatii/poze/clepsidra_4.png" id="joc2_intrebare1_clepsidra4"
+                 style="top: 20%; left: 81%; height: 20%; width: 15%;">
+
+            <img src="../resources/instrumente_si_operatii/poze/clepsidra_2.png" id="joc2_intrebare1_raspuns2"
+                 style="top: 45%; left: 50%; height: 20%; width: 10%;" class="answer">
+            <img src="../resources/instrumente_si_operatii/poze/clepsidra_4.png" id="joc2_intrebare1_raspuns4"
+                 style="top: 47%; left: 62%; height: 18%; width: 15%;" class="correct answer">
+            <img src="../resources/instrumente_si_operatii/poze/clepsidra_1.png" id="joc2_intrebare1_raspuns1"
+                 style="top: 45%; left: 79%; height: 20%; width: 6%;" class="answer">
+
+
+
+            <img src="../resources/instrumente_si_operatii/poze/calendar_2.png" id="joc2_intrebare2_calendar2"
+                 style="top: 20%; left: 45%; height: 20%; width: 10%;">
+            <img src="../resources/instrumente_si_operatii/poze/plus.png" id="joc2_intrebare2_plus"
+                 style="top: 23%; left: 57%; height: 10%; width: 5%;">
+            <img src="../resources/instrumente_si_operatii/poze/calendar_1.png" id="joc2_intrebare2_calendar1"
+                 style="top: 20%; left: 64%; height: 20%; width: 8%;">
+            <img src="../resources/instrumente_si_operatii/poze/equal.png" id="joc2_intrebare2_equal"
+                 style="top: 23%; left: 74%; height: 10%; width: 5%;">
+            <img src="../resources/instrumente_si_operatii/poze/question_mark.png" id="joc2_intrebare2_questionmark"
+                 style="top: 18%; left: 81%; height: 20%; width: 10%;">
+
+            <img src="../resources/instrumente_si_operatii/poze/calendar_3.png" id="joc2_intrebare2_calendar3"
+                 style="top: 20%; left: 81%; height: 20%; width: 14%;">
+
+            <img src="../resources/instrumente_si_operatii/poze/calendar_2.png" id="joc2_intrebare2_raspuns2"
+                 style="top: 45%; left: 50%; height: 20%; width: 10%;" class="answer">
+            <img src="../resources/instrumente_si_operatii/poze/calendar_1.png" id="joc2_intrebare2_raspuns1"
+                 style="top: 44.5%; left: 65%; height: 21%; width: 8%;" class="answer">
+            <img src="../resources/instrumente_si_operatii/poze/calendar_3.png" id="joc2_intrebare2_raspuns3"
+                 style="top: 45%; left: 76%; height: 20%; width: 15%;" class="correct answer">
+
+
+
+            <img src="../resources/instrumente_si_operatii/poze/cronometru_1.png" id="joc2_intrebare3_cronometru1_1"
+                 style="top: 20%; left: 43%; height: 20%; width: 10%;">
+            <img src="../resources/instrumente_si_operatii/poze/plus.png" id="joc2_intrebare3_plus"
+                 style="top: 23%; left: 55%; height: 10%; width: 5%;">
+            <img src="../resources/instrumente_si_operatii/poze/cronometru_1.png" id="joc2_intrebare3_cronometru1_2"
+                 style="top: 20%; left: 62%; height: 20%; width: 10%;">
+            <img src="../resources/instrumente_si_operatii/poze/equal.png" id="joc2_intrebare3_equal"
+                 style="top: 23%; left: 74%; height: 10%; width: 5%;">
+            <img src="../resources/instrumente_si_operatii/poze/question_mark.png" id="joc2_intrebare3_questionmark"
+                 style="top: 18%; left: 81%; height: 20%; width: 10%;">
+
+            <img src="../resources/instrumente_si_operatii/poze/cronometru_2.png" id="joc2_intrebare3_cronometru2"
+                 style="top: 20%; left: 81%; height: 20%; width: 12.5%;">
+
+            <img src="../resources/instrumente_si_operatii/poze/cronometru_2.png" id="joc2_intrebare3_raspuns2"
+                 style="top: 45%; left: 48%; height: 20%; width: 12.5%;" class="correct answer">
+            <img src="../resources/instrumente_si_operatii/poze/cronometru_1.png" id="joc2_intrebare3_raspuns1"
+                 style="top: 45.5%; left: 63%; height: 20%; width: 10%;" class="answer">
+            <img src="../resources/instrumente_si_operatii/poze/cronometru_3.png" id="joc2_intrebare3_raspuns3"
+                 style="top: 44%; left: 75%; height: 20%; width: 15%;" class="answer">
+
+
+
+            <img src="../resources/instrumente_si_operatii/poze/ceas_3.png" id="joc2_intrebare4_ceas3"
+            style="top: 18%; left: 43%; height: 22%; width: 12%;">
+            <img src="../resources/instrumente_si_operatii/poze/plus.png" id="joc2_intrebare4_plus"
+            style="top: 23%; left: 56%; height: 10%; width: 5%;">
+            <img src="../resources/instrumente_si_operatii/poze/ceas_2.png" id="joc2_intrebare4_ceas2"
+            style="top: 18%; left: 62%; height: 22%; width: 10%;">
+            <img src="../resources/instrumente_si_operatii/poze/equal.png" id="joc2_intrebare4_equal"
+            style="top: 23%; left: 73%; height: 10%; width: 5%;">
+            <img src="../resources/instrumente_si_operatii/poze/question_mark.png" id="joc2_intrebare4_questionmark"
+            style="top: 18%; left: 79%; height: 20%; width: 10%;">
+
+            <img src="../resources/instrumente_si_operatii/poze/ceas_5.png" id="joc2_intrebare4_ceas5"
+            style="top: 20%; left: 79%; height: 20%; width: 14%;">
+
+            <img src="../resources/instrumente_si_operatii/poze/ceas_1.png" id="joc2_intrebare4_raspuns1"
+            style="top: 45%; left: 51%; height: 20%; width: 7%;" class="answer">
+            <img src="../resources/instrumente_si_operatii/poze/ceas_5.png" id="joc2_intrebare4_raspuns5"
+            style="top: 47%; left: 61%; height: 18%; width: 15%;" class="correct answer">
+            <img src="../resources/instrumente_si_operatii/poze/ceas_2.png" id="joc2_intrebare4_raspuns2"
+            style="top: 45%; left: 79%; height: 20%; width: 10%;" class="answer">
+
+
+
+            <img src="../resources/instrumente_si_operatii/poze/clepsidra_2.png" id="joc2_intrebare5_clepsidra2"
+            style="top: 20%; left: 45%; height: 20%; width: 10%;">
+            <img src="../resources/instrumente_si_operatii/poze/plus.png" id="joc2_intrebare5_plus"
+            style="top: 23%; left: 57%; height: 10%; width: 5%;">
+            <img src="../resources/instrumente_si_operatii/poze/clepsidra_1.png" id="joc2_intrebare5_clepsidra1"
+            style="top: 20%; left: 64%; height: 20%; width: 6%;">
+            <img src="../resources/instrumente_si_operatii/poze/equal.png" id="joc2_intrebare5_equal"
+            style="top: 23%; left: 74%; height: 10%; width: 5%;">
+            <img src="../resources/instrumente_si_operatii/poze/question_mark.png" id="joc2_intrebare5_questionmark"
+            style="top: 18%; left: 81%; height: 20%; width: 10%;">
+
+            <img src="../resources/instrumente_si_operatii/poze/clepsidra_3.png" id="joc2_intrebare5_clepsidra3"
+            style="top: 20%; left: 81%; height: 20%; width: 14%;">
+
+            <img src="../resources/instrumente_si_operatii/poze/clepsidra_2.png" id="joc2_intrebare5_raspuns2"
+            style="top: 45%; left: 50%; height: 20%; width: 10%;" class="answer">
+            <img src="../resources/instrumente_si_operatii/poze/clepsidra_1.png" id="joc2_intrebare5_raspuns1"
+            style="top: 44.5%; left: 65%; height: 21%; width: 6%;" class="answer">
+            <img src="../resources/instrumente_si_operatii/poze/clepsidra_3.png" id="joc2_intrebare5_raspuns3"
+            style="top: 45%; left: 76%; height: 20%; width: 15%;" class="correct answer">
+
+
+
+            <img src="../resources/instrumente_si_operatii/poze/ceas_5.png" id="joc2_intrebare6_ceas5"
+                 style="top: 22%; left: 41%; height: 18%; width: 14%;">
+            <img src="../resources/instrumente_si_operatii/poze/minus.png" id="joc2_intrebare6_minus"
+                 style="top: 23%; left: 58%; height: 10%; width: 5%;">
+            <img src="../resources/instrumente_si_operatii/poze/ceas_1.png" id="joc2_intrebare6_ceas1"
+                 style="top: 20%; left: 65%; height: 20%; width: 6%;">
+            <img src="../resources/instrumente_si_operatii/poze/equal.png" id="joc2_intrebare6_equal"
+                 style="top: 23%; left: 74%; height: 10%; width: 5%;">
+            <img src="../resources/instrumente_si_operatii/poze/question_mark.png" id="joc2_intrebare6_questionmark"
+                 style="top: 18%; left: 81%; height: 20%; width: 10%;">
+
+            <img src="../resources/instrumente_si_operatii/poze/ceas_4.png" id="joc2_intrebare6_ceas4"
+                 style="top: 20%; left: 81%; height: 20%; width: 14%;">
+
+            <img src="../resources/instrumente_si_operatii/poze/ceas_4.png" id="joc2_intrebare6_raspuns4"
+                 style="top: 47%; left: 48%; height: 18%; width: 14%;" class="correct answer">
+            <img src="../resources/instrumente_si_operatii/poze/ceas_1.png" id="joc2_intrebare6_raspuns1"
+                 style="top: 44.5%; left: 66%; height: 21%; width: 6%;" class="answer">
+            <img src="../resources/instrumente_si_operatii/poze/ceas_2.png" id="joc2_intrebare6_raspuns2"
+                 style="top: 45%; left: 76%; height: 20%; width: 10%;" class="answer">
+
+
+
+
+            <img src="../resources/instrumente_si_operatii/poze/clepsidra_2.png" id="joc2_intrebare7_clepsidra2"
+            style="top: 20%; left: 45%; height: 20%; width: 10%;">
+            <img src="../resources/instrumente_si_operatii/poze/minus.png" id="joc2_intrebare7_minus"
+            style="top: 23%; left: 57%; height: 10%; width: 5%;">
+            <img src="../resources/instrumente_si_operatii/poze/clepsidra_1.png" id="joc2_intrebare7_clepsidra1"
+            style="top: 20%; left: 64%; height: 20%; width: 6%;">
+            <img src="../resources/instrumente_si_operatii/poze/equal.png" id="joc2_intrebare7_equal"
+            style="top: 23%; left: 74%; height: 10%; width: 5%;">
+            <img src="../resources/instrumente_si_operatii/poze/question_mark.png" id="joc2_intrebare7_questionmark"
+            style="top: 18%; left: 81%; height: 20%; width: 10%;">
+
+            <img src="../resources/instrumente_si_operatii/poze/clepsidra_1.png" id="joc2_intrebare7_clepsidra1_2"
+            style="top: 20%; left: 83%; height: 20%; width: 6%;">
+
+            <img src="../resources/instrumente_si_operatii/poze/clepsidra_2.png" id="joc2_intrebare7_raspuns2"
+            style="top: 45%; left: 50%; height: 20%; width: 10%;" class="answer">
+            <img src="../resources/instrumente_si_operatii/poze/clepsidra_1.png" id="joc2_intrebare7_raspuns1"
+            style="top: 44.5%; left: 65%; height: 21%; width: 6%;" class="correct answer">
+            <img src="../resources/instrumente_si_operatii/poze/clepsidra_3.png" id="joc2_intrebare7_raspuns3"
+            style="top: 45%; left: 76%; height: 20%; width: 15%;" class="answer">
+
+
+
+            <img src="../resources/instrumente_si_operatii/poze/calendar_3.png" id="joc2_intrebare8_calendar3"
+            style="top: 20%; left: 41%; height: 20%; width: 14%;">
+            <img src="../resources/instrumente_si_operatii/poze/minus.png" id="joc2_intrebare8_minus"
+            style="top: 23%; left: 57%; height: 10%; width: 5%;">
+            <img src="../resources/instrumente_si_operatii/poze/calendar_1.png" id="joc2_intrebare8_calendar1"
+            style="top: 20%; left: 64%; height: 20%; width: 8%;">
+            <img src="../resources/instrumente_si_operatii/poze/equal.png" id="joc2_intrebare8_equal"
+            style="top: 23%; left: 74%; height: 10%; width: 5%;">
+            <img src="../resources/instrumente_si_operatii/poze/question_mark.png" id="joc2_intrebare8_questionmark"
+            style="top: 18%; left: 81%; height: 20%; width: 10%;">
+
+            <img src="../resources/instrumente_si_operatii/poze/calendar_2.png" id="joc2_intrebare8_calendar2"
+            style="top: 20%; left: 81%; height: 20%; width: 10%;">
+
+            <img src="../resources/instrumente_si_operatii/poze/calendar_2.png" id="joc2_intrebare8_raspuns2"
+            style="top: 45%; left: 48%; height: 20%; width: 10%;" class="correct answer">
+            <img src="../resources/instrumente_si_operatii/poze/calendar_1.png" id="joc2_intrebare8_raspuns1"
+            style="top: 44.5%; left: 63%; height: 21%; width: 8%;" class="answer">
+            <img src="../resources/instrumente_si_operatii/poze/calendar_3.png" id="joc2_intrebare8_raspuns3"
+            style="top: 45%; left: 74%; height: 20%; width: 15%;" class="answer">
+        </div>
+
+        <div class="submenu submenu_part_2 d-none">
+            <img id="submenu_item_lectie_part_2" src="../resources/general/poze/learning_icon.png" style="height: 30%; width: 15%; left: 50%; top: 25%">
+            <img id="submenu_item_joc_part_2" src="../resources/general/poze/playing_icon.png" style="height: 30%; width: 17%; left: 70%; top: 23%">
+            <img id="submenu_go_back_part_2" src="../resources/general/poze/move_back.png" style="height: 15%; width: 10%; left: 5%; top: 80%">
+
+        </div>
+    </div>
+
+    <div class="page page_part_3 d-none">
+        <img class="audio_button" src="../resources/general/poze/repeta.png">
+
+        <div class="big_scroll_container"></div>
+
+        <div class="audios_div">
+            <audio id="lectie3_part1" src="../resources/audios/part3/Lectie3_part1.mp3"
+                   onended="playAudio('lectie3_part2')" onplay="showImagesLesson3_1()"></audio>
+            <audio id="lectie3_part2" src="../resources/audios/part3/lectie3_part2.mp3"
+                   onended="playAudio('lectie3_part3')" onplay="showImagesLesson3_2()"></audio>
+            <audio id="lectie3_part3" src="../resources/audios/part3/lectie3_part3.mp3"
+                   onended="playAudio('lectie3_outro')" onplay="showImagesLesson3_3()"></audio>
+            <audio id="lectie3_outro" src="../resources/audios/part3/lectie3_outro.mp3" onended="closeBubble()"
+                   onplay="showImagesLesson3_outro()"></audio>
+
+            <audio id="luni_audio" src="../resources/audios/part3/luni.mp3" onended="closeBubble()"></audio>
+            <audio id="marti_audio" src="../resources/audios/part3/marti.mp3" onended="closeBubble()"></audio>
+            <audio id="miercuri_audio" src="../resources/audios/part3/miercuri.mp3" onended="closeBubble()"></audio>
+            <audio id="joi_audio" src="../resources/audios/part3/joi.mp3" onended="closeBubble()"></audio>
+            <audio id="vineri_audio" src="../resources/audios/part3/vineri.mp3" onended="closeBubble()"></audio>
+            <audio id="sambata_audio" src="../resources/audios/part3/sambata.mp3" onended="closeBubble()"></audio>
+            <audio id="duminica_audio" src="../resources/audios/part3/duminica.mp3" onended="closeBubble()"></audio>
+
+            <audio id="sep_audio" src="../resources/audios/part3/sep.mp3" onended="closeBubble()"></audio>
+            <audio id="tem_audio" src="../resources/audios/part3/tem.mp3" onended="closeBubble()"></audio>
+            <audio id="de_audio" src="../resources/audios/part3/de.mp3" onended="closeBubble()"></audio>
+            <audio id="cem_audio" src="../resources/audios/part3/cem.mp3" onended="closeBubble()"></audio>
+            <audio id="no_audio" src="../resources/audios/part3/no.mp3" onended="closeBubble()"></audio>
+            <audio id="iem_audio" src="../resources/audios/part3/iem.mp3" onended="closeBubble()"></audio>
+            <audio id="oc_audio" src="../resources/audios/part3/oc.mp3" onended="closeBubble()"></audio>
+            <audio id="tom_audio" src="../resources/audios/part3/tom.mp3" onended="closeBubble()"></audio>
+            <audio id="bri_audio" src="../resources/audios/part3/bri.mp3" onended="closeBubble()"></audio>
+            <audio id="e_audio" src="../resources/audios/part3/e.mp3" onended="closeBubble()"></audio>
+
+            <audio id="sam_audio" src="../resources/audios/part3/sam.mp3" onended="closeBubble()"></audio>
+            <audio id="ba_audio" src="../resources/audios/part3/ba.mp3" onended="closeBubble()"></audio>
+            <audio id="ta_audio" src="../resources/audios/part3/ta.mp3" onended="closeBubble()"></audio>
+
+            <audio id="septembrie_audio" src="../resources/audios/part3/septembrie.mp3" onended="closeBubble()"></audio>
+            <audio id="octombrie_audio" src="../resources/audios/part3/octombrie.mp3" onended="closeBubble()"></audio>
+            <audio id="noiembrie_audio" src="../resources/audios/part3/noiembrie.mp3" onended="closeBubble()"></audio>
+            <audio id="decembrie_audio" src="../resources/audios/part3/decembrie.mp3" onended="closeBubble()"></audio>
+
+
+            <audio id="joc3_hint1" src="../resources/audios/part3/joc3_hint1.mp3" onended="closeBubble(); setupJoc3DragAndDropZileleSaptamanii()" onplay="showJoc3DragAndDropZileleSaptamanii()"></audio>
+            <audio id="joc3_hint3" src="../resources/audios/part3/joc3_hint3.mp3" onended="closeBubble(); setupJoc3DragAndDropSilabe()" onplay="showJoc3DragAndDropSilabe()"></audio>
+
+
+            <audio id="submenu_item_lectie_part_3_audio" src="../resources/audios/part3/submenu_lectie_part_3.mp3" onended="closeBubble()"></audio>
+            <audio id="submenu_item_joc_part_3_audio" src="../resources/audios/part3/submenu_joc_part_3.mp3" onended="closeBubble()"></audio>
+        </div>
+
+        <div class="lesson_items_div">
+            <img id="calendar_lesson3" src="../resources/instrumente_si_operatii/poze/calendar_simplu.png"
+                 style="top: 15%; left: 55%; height: 50%; width: 25%;">
+
+            <img id="luni" src="../resources/zilele_saptamanii/poze/luni.png"
+                 style="top: 24%; left: 42%; height: 20%; width: 9%;">
+            <img id="marti" src="../resources/zilele_saptamanii/poze/marti.png"
+                 style="top: 24%; left: 52%; height: 20%; width: 10%;">
+            <img id="miercuri" src="../resources/zilele_saptamanii/poze/miercuri.png"
+                 style="top: 25%; left: 63%; height: 17%; width: 10%;">
+            <img id="joi" src="../resources/zilele_saptamanii/poze/joi.png"
+                 style="top: 25%; left: 74%; height: 18%; width: 10%;">
+            <img id="vineri" src="../resources/zilele_saptamanii/poze/vineri.png"
+                 style="top: 24.5%; left: 85%; height: 19%; width: 10%;">
+            <img id="sambata" src="../resources/zilele_saptamanii/poze/sambata.png"
+                 style="top: 43%; left: 57.5%; height: 18%; width: 10%;">
+            <img id="duminica" src="../resources/zilele_saptamanii/poze/duminica.png"
+                 style="top: 43%; left: 68%; height: 19%; width: 11%;">
+
+            <img id="ianuarie" src="../resources/lunile_anului/poze/ianuarie.png"
+                 style="top: 20%; left: 46%; height: 20%; width: 20%;">
+            <img id="iulie" src="../resources/lunile_anului/poze/iulie.png"
+                 style="top: 20%; left: 69%; height: 20%; width: 20%;">
+            <img id="septembrie" src="../resources/lunile_anului/poze/septembrie.png"
+                 style="top: 42.5%; left: 46%; height: 20%; width: 20%;">
+            <img id="decembrie" src="../resources/lunile_anului/poze/decembrie.png"
+                 style="top: 42.5%; left: 69%; height: 20%; width: 20%;">
+
+            <img class="left_arrow" src="../resources/general/poze/left_arrow.png">
+        </div>
+
+        <div class="zilele_saptamanii_sortable1 zilele_saptamanii_draggable_zone1" style="top: 45%; left: 52.5%; height:20%; width: 30%">
+            <img id="miercuri_draggable_1" class="zi_saptamana_sort_item1 order_3 miercuri_draggable_1" src="../resources/zilele_saptamanii/poze/miercuri.png" style="height: 90%">
+            <img id="luni_draggable_1" class="zi_saptamana_sort_item1 order_1" src="../resources/zilele_saptamanii/poze/luni.png">
+            <img id="marti_draggable_1" class="zi_saptamana_sort_item1 order_2" src="../resources/zilele_saptamanii/poze/marti.png">
+        </div>
+        <div class="zilele_saptamanii_sortable1 zilele_saptamanii_droppable_zone1" style="top: 20%; left: 52.5%; height:20%; width: 30%">
+
+        </div>
+
+
+        <div class="zilele_saptamanii_sortable2 zilele_saptamanii_draggable_zone2" style="top: 45%; left: 52.5%; height:20%; width: 30%">
+            <img id="miercuri_draggable_2" class="zi_saptamana_sort_item2 order_1 miercuri_draggable_2" src="../resources/zilele_saptamanii/poze/miercuri.png" style="height: 90%">
+            <img id="vineri_draggable_2" class="zi_saptamana_sort_item2 order_3" src="../resources/zilele_saptamanii/poze/vineri.png">
+            <img id="joi_draggable_2" class="zi_saptamana_sort_item2 order_2" src="../resources/zilele_saptamanii/poze/joi.png">
+        </div>
+        <div class="zilele_saptamanii_sortable2 zilele_saptamanii_droppable_zone2" style="top: 20%; left: 52.5%; height:20%; width: 30%">
+
+        </div>
+
+
+        <div class="zilele_saptamanii_sortable3 zilele_saptamanii_draggable_zone3" style="top: 45%; left: 52.5%; height:20%; width: 30%">
+            <img id="sambata_draggable_3" class="zi_saptamana_sort_item3 order_2" src="../resources/zilele_saptamanii/poze/sambata.png">
+            <img id="vineri_draggable_3" class="zi_saptamana_sort_item3 order_1" src="../resources/zilele_saptamanii/poze/vineri.png">
+            <img id="duminica_draggable_3" class="zi_saptamana_sort_item3 order_3" src="../resources/zilele_saptamanii/poze/duminica.png">
+        </div>
+        <div class="zilele_saptamanii_sortable3 zilele_saptamanii_droppable_zone3" style="top: 20%; left: 52.5%; height:20%; width: 30%">
+
+        </div>
+
+        <div class="silabe_sortable1 silabe_draggable_zone1" style="top: 45%; left: 47.5%; height:15%; width: 40%">
+            <img id="tem_draggable_1" class="silaba_sort_item1 order_2" src="../resources/silabe/poze/septembrie_2.png">
+            <img id="e_draggable_1" class="silaba_sort_item1 order_4" src="../resources/silabe/poze/septembrie_4.png">
+            <img id="bri_draggable_1" class="silaba_sort_item1 order_3" src="../resources/silabe/poze/septembrie_3.png">
+            <img id="sep_draggable_1" class="silaba_sort_item1 order_1" src="../resources/silabe/poze/septembrie_1.png">
+        </div>
+        <div class="silabe_sortable1 silabe_droppable_zone1" style="top: 25%; left: 47.5%; height:15%; width: 40%">
+
+        </div>
+
+        <div class="silabe_sortable2 silabe_draggable_zone2" style="top: 45%; left: 47.5%; height:15%; width: 40%">
+            <img id="oc_draggable_2" class="silaba_sort_item2 order_1" src="../resources/silabe/poze/octombrie_1.png">
+            <img id="e_draggable_2" class="silaba_sort_item2 order_4" src="../resources/silabe/poze/octombrie_4.png">
+            <img id="bri_draggable_2" class="silaba_sort_item2 order_3" src="../resources/silabe/poze/octombrie_3.png">
+            <img id="tom_draggable_2" class="silaba_sort_item2 order_2" src="../resources/silabe/poze/octombrie_2.png">
+        </div>
+        <div class="silabe_sortable2 silabe_droppable_zone2" style="top: 25%; left: 47.5%; height:15%; width: 40%">
+
+        </div>
+
+
+        <div class="silabe_sortable3 silabe_draggable_zone3" style="top: 45%; left: 47.5%; height:15%; width: 40%">
+            <img id="no_draggable_3" class="silaba_sort_item3 order_1" src="../resources/silabe/poze/noiembrie_1.png">
+            <img id="e_draggable_3" class="silaba_sort_item3 order_4" src="../resources/silabe/poze/noiembrie_4.png">
+            <img id="bri_draggable_3" class="silaba_sort_item3 order_3" src="../resources/silabe/poze/noiembrie_3.png">
+            <img id="iem_draggable_3" class="silaba_sort_item3 order_2" src="../resources/silabe/poze/noiembrie_2.png">
+        </div>
+        <div class="silabe_sortable3 silabe_droppable_zone3" style="top: 25%; left: 47.5%; height:15%; width: 40%">
+
+        </div>
+
+
+
+        <div class="silabe_sortable4 silabe_draggable_zone4" style="top: 45%; left: 47.5%; height:15%; width: 40%">
+            <img id="cem_draggable_4" class="silaba_sort_item4 order_2" src="../resources/silabe/poze/decembrie_2.png">
+            <img id="e_draggable_4" class="silaba_sort_item4 order_4" src="../resources/silabe/poze/decembrie_4.png">
+            <img id="bri_draggable_4" class="silaba_sort_item4 order_3" src="../resources/silabe/poze/decembrie_3.png">
+            <img id="de_draggable_4" class="silaba_sort_item4 order_1" src="../resources/silabe/poze/decembrie_1.png">
+        </div>
+        <div class="silabe_sortable4 silabe_droppable_zone4" style="top: 25%; left: 47.5%; height:15%; width: 40%">
+
+        </div>
+
+
+
+        <div class="silabe_sortable5 silabe_draggable_zone5" style="top: 45%; left: 47.5%; height:15%; width: 40%">
+            <img id="ta_draggable_5" class="silaba_sort_item5 order_3" src="../resources/silabe/poze/sambata_3.png">
+            <img id="sam_draggable_5" class="silaba_sort_item5 order_1" src="../resources/silabe/poze/sambata_1.png">
+            <img id="ba_draggable_5" class="silaba_sort_item5 order_2" src="../resources/silabe/poze/sambata_2.png">
+        </div>
+        <div class="silabe_sortable5 silabe_droppable_zone5" style="top: 25%; left: 47.5%; height:15%; width: 40%">
+
+        </div>
+
+
+        <div class="submenu submenu_part_3 d-none">
+            <img id="submenu_item_lectie_part_3" src="../resources/general/poze/learning_icon.png" style="height: 30%; width: 15%; left: 50%; top: 25%">
+            <img id="submenu_item_joc_part_3" src="../resources/general/poze/playing_icon.png" style="height: 30%; width: 17%; left: 70%; top: 23%">
+            <img id="submenu_go_back_part_3" src="../resources/general/poze/move_back.png" style="height: 15%; width: 10%; left: 5%; top: 80%">
+
+        </div>
+    </div>
+
+    <div class="page page_part_4 d-none">
+        <img class="audio_button" src="../resources/general/poze/repeta.png">
+
+        <div class="big_scroll_container"></div>
+
+        <div class="audios_div">
+            <audio id="lectie4_part1" src="../resources/audios/part4/lectie4_part1.mp3"
+                onended="playAudio('lectie4_part2')" onplay="showImagesLesson4_1()"></audio>
+            <audio id="lectie4_part2" src="../resources/audios/part4/lectie4_part2.mp3"
+                onended="playAudio('lectie4_part3')" onplay="showImagesLesson4_2()"></audio>
+            <audio id="lectie4_part3" src="../resources/audios/part4/lectie4_part3.mp3"
+                onended="playAudio('lectie4_part4')" onplay="showImagesLesson4_3()"></audio>
+            <audio id="lectie4_part4" src="../resources/audios/part4/lectie4_part4.mp3"
+                onended="playAudio('lectie4_part5')" onplay="showImagesLesson4_4()"></audio>
+            <audio id="lectie4_part5" src="../resources/audios/part4/lectie4_part5.mp3"
+                onended="playAudio('lectie4_outro')" onplay="showImagesLesson4_5()"></audio>
+            <audio id="lectie4_outro" src="../resources/audios/part4/lectie4_outro.mp3" onended="closeBubble()"
+                onplay="showImagesLesson4_outro()"></audio>
+
+            <audio id="primavara_audio" src="../resources/audios/part4/primavara.mp3" onended="closeBubble()"></audio>
+            <audio id="vara_audio" src="../resources/audios/part4/vara.mp3" onended="closeBubble()"></audio>
+            <audio id="toamna_audio" src="../resources/audios/part4/toamna.mp3" onended="closeBubble()"></audio>
+            <audio id="iarna_audio" src="../resources/audios/part4/iarna.mp3" onended="closeBubble()"></audio>
+
+
+            <audio id="joc4_hint" src="../resources/audios/part4/joc4_hint.mp3" onended="closeBubble()" onplay="showAnswersJoc4()"></audio>
+            <audio id="joc4_intrebare1" src="../resources/audios/part4/joc4_intrebare1.mp3" onended="closeBubble(); setupJoc4Intrebare1()"></audio>
+            <audio id="joc4_intrebare2" src="../resources/audios/part4/joc4_intrebare2.mp3" onended="closeBubble(); setupJoc4Intrebare2()"></audio>
+            <audio id="joc4_intrebare3" src="../resources/audios/part4/joc4_intrebare3.mp3" onended="closeBubble(); setupJoc4Intrebare3()"></audio>
+            <audio id="joc4_intrebare4" src="../resources/audios/part4/joc4_intrebare4.mp3" onended="closeBubble(); setupJoc4Intrebare4()"></audio>
+            <audio id="joc4_intrebare5" src="../resources/audios/part4/joc4_intrebare5.mp3" onended="closeBubble(); setupJoc4Intrebare5()"></audio>
+            <audio id="joc4_intrebare6" src="../resources/audios/part4/joc4_intrebare6.mp3" onended="closeBubble(); setupJoc4Intrebare6()"></audio>
+            <audio id="joc4_intrebare7" src="../resources/audios/part4/joc4_intrebare7.mp3" onended="closeBubble(); setupJoc4Intrebare7()"></audio>
+            <audio id="joc4_intrebare8" src="../resources/audios/part4/joc4_intrebare8.mp3" onended="closeBubble(); setupJoc4Intrebare8()"></audio>
+            <audio id="joc4_intrebare9" src="../resources/audios/part4/joc4_intrebare9.mp3" onended="closeBubble(); setupJoc4Intrebare9()"></audio>
+            <audio id="joc4_intrebare10" src="../resources/audios/part4/joc4_intrebare10.mp3" onended="closeBubble(); setupJoc4Intrebare10()"></audio>
+            <audio id="joc4_intrebare11" src="../resources/audios/part4/joc4_intrebare11.mp3" onended="closeBubble(); setupJoc4Intrebare11()"></audio>
+            <audio id="joc4_intrebare12" src="../resources/audios/part4/joc4_intrebare12.mp3" onended="closeBubble(); setupJoc4Intrebare12()"></audio>
+            <audio id="joc4_intrebare13" src="../resources/audios/part4/joc4_intrebare13.mp3" onended="closeBubble(); setupJoc4Intrebare13()"></audio>
+            <audio id="joc4_intrebare14" src="../resources/audios/part4/joc4_intrebare14.mp3" onended="closeBubble(); setupJoc4Intrebare14()"></audio>
+            <audio id="joc4_intrebare15" src="../resources/audios/part4/joc4_intrebare15.mp3" onended="closeBubble(); setupJoc4Intrebare15()"></audio>
+            <audio id="joc4_intrebare16" src="../resources/audios/part4/joc4_intrebare16.mp3" onended="closeBubble(); setupJoc4Intrebare16()"></audio>
+            <audio id="joc4_intrebare17" src="../resources/audios/part4/joc4_intrebare17.mp3" onended="closeBubble(); setupJoc4Intrebare17()"></audio>
+            <audio id="joc4_intrebare18" src="../resources/audios/part4/joc4_intrebare18.mp3" onended="closeBubble(); setupJoc4Intrebare18()"></audio>
+            <audio id="joc4_intrebare19" src="../resources/audios/part4/joc4_intrebare19.mp3" onended="closeBubble(); setupJoc4Intrebare19()"></audio>
+
+
+
+            <audio id="submenu_item_lectie_part_4_audio" src="../resources/audios/part4/submenu_lectie_part_4.mp3" onended="closeBubble()"></audio>
+            <audio id="submenu_item_joc_part_4_audio" src="../resources/audios/part4/submenu_joc_part_4.mp3" onended="closeBubble()"></audio>
+        </div>
+
+        <div class="lesson_items_div">
+            <img id="primavara" src="../resources/anotimpurile/poze/primavara.png"
+                style="top: 10%; left: 52.5%; height: 30%; width: 12%">
+            <img id="vara" src="../resources/anotimpurile/poze/vara.png"
+                 style="top: 11.5%; left: 70%; height: 30%; width: 13%">
+            <img id="toamna" src="../resources/anotimpurile/poze/toamna.png"
+                style="top: 40%; left: 52.5%; height: 30%; width: 13%">
+            <img id="iarna" src="../resources/anotimpurile/poze/iarna.png"
+                style="top: 37.5%; left: 70%; height: 32%; width: 14%">
+
+            <img id="blooming_flower" src="../resources/anotimpurile/poze/blooming_flower.png"
+                 style="top: 37.5%; left: 70%; height: 32%; width: 14%">
+            <img id="bird" src="../resources/anotimpurile/poze/bird.png"
+                 style="top: 10%; left: 70%; height: 30%; width: 14%">
+            <img id="insects" src="../resources/anotimpurile/poze/insects.png"
+                 style="top: 42%; left: 52%; height: 25%; width: 14%">
+
+            <img id="swimming" src="../resources/anotimpurile/poze/swimming.png"
+                style="top: 37.5%; left: 70%; height: 32%; width: 14%">
+            <img id="sun" src="../resources/anotimpurile/poze/sun.png"
+                style="top: 12%; left: 53%; height: 30%; width: 14%">
+            <img id="summer_fruits" src="../resources/anotimpurile/poze/summer_fruits.png"
+                style="top: 42%; left: 52%; height: 25%; width: 14%">
+
+            <img id="rain" src="../resources/anotimpurile/poze/rain.png"
+            style="top: 37.5%; left: 70%; height: 32%; width: 14%">
+            <img id="jam" src="../resources/anotimpurile/poze/jam.png"
+            style="top: 10%; left: 70%; height: 30%; width: 14%">
+            <img id="autumn_leaves" src="../resources/anotimpurile/poze/autumn_leaves.png"
+            style="top: 12.5%; left: 52%; height: 25%; width: 14%">
+
+            <img id="snow" src="../resources/anotimpurile/poze/snow.png"
+            style="top: 45%; left: 52.5%; height: 20%; width: 15%">
+            <img id="winter_clothes" src="../resources/anotimpurile/poze/winter_clothes.png"
+            style="top: 11%; left: 65%; height: 30%; width: 25%">
+            <img id="santa" src="../resources/anotimpurile/poze/santa.png"
+            style="top: 12.5%; left: 50%; height: 30%; width: 14%">
+
+            <img class="left_arrow" src="../resources/general/poze/left_arrow.png">
+        </div>
+
+        <div class="joc4_answers">
+            <img id="question_mark_joc4" src="../resources/instrumente_si_operatii/poze/question_mark.png" style="position: absolute; height: 20%; width: 10%; top: 30%; left: 63%;">
+            <img id="primavara_answer" class="answer_joc4" src="../resources/anotimpurile/poze/primavara.png"
+                 style="top: 10%; left: 50.5%; height: 30%; width: 12%">
+            <img id="vara_answer" class="answer_joc4" src="../resources/anotimpurile/poze/vara.png"
+                 style="top: 11.5%; left: 72%; height: 30%; width: 13%">
+            <img id="toamna_answer" class="answer_joc4" src="../resources/anotimpurile/poze/toamna.png"
+                 style="top: 40%; left: 50.5%; height: 30%; width: 13%">
+            <img id="iarna_answer" class="answer_joc4" src="../resources/anotimpurile/poze/iarna.png"
+                 style="top: 37.5%; left: 72%; height: 32%; width: 14%">
+        </div>
+
+        <div class="submenu submenu_part_4 d-none">
+            <img id="submenu_item_lectie_part_4" src="../resources/general/poze/learning_icon.png" style="height: 30%; width: 15%; left: 50%; top: 25%">
+            <img id="submenu_item_joc_part_4" src="../resources/general/poze/playing_icon.png" style="height: 30%; width: 17%; left: 70%; top: 23%">
+            <img id="submenu_go_back_part_4" src="../resources/general/poze/move_back.png" style="height: 15%; width: 10%; left: 5%; top: 80%">
+
+        </div>
+    </div>
+</body>
+
+</html>

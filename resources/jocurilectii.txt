@@ -1,0 +1,43 @@
+!La toate jocurile/ partile de invatare, afisati ce aveti de afisat intr-un papirus ca in ultimul mock-up trimis de 
+		Laura pe facebook (primul joc + invatare mockup final)
+
+!Audio-urile ce lipsesc le adaug eu cat mai repede
+!Nu uitati cand se greseste sa bagati audio-ul cu "mai_incearca.mp3"
+
+Partea 1:
+	-> lectie: instrumente de masurat timp + momentele zilei (deja inregistrate si uploadate)
+			-> cand se vorbeste despre un instrument/moment al zilei, pe ecran trebuie sa apara iconita reprezentativa care sa pulseze
+				in continuu pana nu se mai vorbeste de ea, fiind apoi inlocuita cu urmatorul instrument/moment al zilei
+	-> joc: 2 parti:
+			-> o parte cu intrebare + 3 variante de raspuns 
+				-variantele de raspuns sunt imagini cu: ceas,      clepsidra+cronometru,       calendar
+				-intrebarile sunt deja uploadate (intrebari de genul "Ce instrument ne ajuta sa stim in ce zi incepe vacanta de Vara>")
+			-> o parte de ordonat momentele zilei in ordine corecta, cu drag and drop
+
+Partea 2:
+	-> lectie: despre adunari si scaderi
+		->audio-uri deja inregistrate; atunci cand se vorbeste despre o adunare/scadere, faceti ceva vizual pe ecran ca in mockup-ul de pe grup
+	-> jocuri: adunari/scaderi afisate pe ecran, 3 variante de raspuns ca in mockup (audio-uri inregistrate)
+
+
+Partea 3: 
+	-> lectie: zilele saptamanii + lunile anului. Adaugati pe ecran chestii vizuale cand vorbiti despre ele, cum credeti ca e bine
+		->audio-uri deja inregistrate
+	->jocuri: (audio-uri lipsesc momentan cred)
+		-> 3-4 zile ale saptamanii de pus in ordine cu drag and drop
+		-> cateva (2-4) intrebari cu 3 variante de raspuns (ca la Partea 1). Variantele de raspuns vor fi 3 imagini cu 
+			bilutele reprezentand zilele saptamanii/lunile anului). (audio-uri momentan neinregistrate)
+		-> despartit in silabe cu drag and drop SAU click + fill (gen casute prestabilite pentru silabe in partea de sus a papirusului
+					iar in partea de jos silabele amestecate. Cand copilul de click pe o silaba, se umple prima casuta libera.
+					cand copilul da click pe o casuta ce contine o silaba, silaba se intoarce inapoi in partea de jos a papirusului.
+					Cand toate casutele au fost umplute cu silabe, daca sunt in ordinea corecta, treceti mai departe, daca nu, 
+					bagati audi de "mai incearca" si goliti casutele punand silabele inapoi in partea de jos a papirusului)
+
+Partea 4:
+	-> lectie: anotimpurile (momentan audio lipseste)
+	-> jocuri:
+		-> propozitii din care lipseste un cuvant (cuvantul ce lipseste este mereu "iarna"/"vara"/"toamna"/"primavara").
+			cand se termina de citit propozitia (vor fi vocale inregistrate de mine), copilul poate alege una dintre cele 4 bilute
+			reprezentand anotimpurile.
+			
+
