@@ -22,3 +22,23 @@ The game is structured in **4 parts**, and each of these parts is split into **t
 To start the application, simply clone the repository and open the "main.html" file in a browser.
 
 ## Screenshots
+<img src="screenshots/ss1.png"/>
+<img src="screenshots/ss2.png"/>
+<img src="screenshots/ss3.png"/>
+<img src="screenshots/ss4.png"/>
+<img src="screenshots/ss5.png"/>
+<img src="screenshots/ss6.png"/>
+<img src="screenshots/ss7.png"/>
+<img src="screenshots/ss8.png"/>
+<img src="screenshots/ss9.png"/>
+<img src="screenshots/ss10.png"/>
+<img src="screenshots/ss11.png"/>
+<img src="screenshots/ss12.png"/>
+<img src="screenshots/ss13.png"/>
+<img src="screenshots/ss14.png"/>
+<img src="screenshots/ss15.png"/>
+<img src="screenshots/ss16.png"/>
+<img src="screenshots/ss17.png"/>
+<img src="screenshots/ss18.png"/>
+<img src="screenshots/ss19.png"/>
+<img src="screenshots/ss20.png"/>
