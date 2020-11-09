@@ -10,9 +10,10 @@ The game is structured in **4 parts**, and each of these parts is split into **t
   - game consisting of questions asking which of the presented time measurement instruments can be used to measure / determine the length or the moment of certain actions.
 * Part 2:
   - lesson about numbers and easy mathematical operations (additions and subtractions) with time measurement instruments;
-  - game consisting of easy mathematical operations (additions and subtractions) with time measurement instruments, with 3 predefined answers;
+  - game consisting of easy mathematical operations (additions and subtractions) with time measurement instruments, with 3 predefined answers.
 * Part 3:
-  - 
+  - lesson about the days of the week and the months of the year, and specific things to each day and each month;
+  - game where the child needs to order a few days of the week or months of the year in a correct chronological order using drag & drop functionality, and also correctly assemble parts of some words representing days of the week or months of the year using a similar drag & drop functionality.
 * Part 4:
 
 ## How to start the application
