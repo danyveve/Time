@@ -15,6 +15,8 @@ The game is structured in **4 parts**, and each of these parts is split into **t
   - lesson about the days of the week and the months of the year, and specific things to each day and each month;
   - game where the child needs to order a few days of the week or months of the year in a correct chronological order using drag & drop functionality, and also correctly assemble parts of some words representing days of the week or months of the year using a similar drag & drop functionality.
 * Part 4:
+  - lesson about the seasons of the year (according to the romanian Climate) and specific things for each of these seasons;
+  - game where the child needs to fill in the missing part of a sentence with the appropriate word denoting one of the four seasons of the year represented by images.
 
 ## How to start the application
 To start the application, simply clone the repository and open the "main.html" file in a browser.
